@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hello! I'm Amrutha Varshini - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #2C3E50; /* Dark background for the whole page */
+    color: #ECF0F1; /* Light grey text for contrast */
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #2980B9; /* Strong blue header */
+    padding: 15px 30px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header .logo h1, header .logo p {
+    color: #fff;
+  }
+
+  header nav ul {
+    display: flex;
+    list-style: none;
+  }
+
+  header nav ul li {
+    margin: 0 20px;
+  }
+
+  header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  header nav ul li a:hover {
+    color: #F39C12; /* Gold on hover */
+  }
+
+  main {
+    margin-top: 120px;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .section {
+    background-color: #34495E; /* Darker shade for sections to blend with the background */
+    padding: 50px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .section h2 img {
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  .section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #F39C12; /* Gold for section titles */
+  }
+
+ .section ul {
+  list-style-type: disc;   /* Show bullet points */
+  padding-left: 1.5rem;    /* Indent the list */
+  margin-bottom: 1rem;     /* Space after the list */
+}
+
+.section ul li {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;        /* Vertical spacing between items */
+}
+
+  .highlight {
+ font-size:30px; 
+    font-weight: bold;
+    color: #1ABC9C; /* Teal for content highlights */
+  }
+
+  .skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .skill-item {
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 200px;
+    text-align: center;
+    background-color: #7F8C8D; /* Muted grey for skill items */
+    color: #ECF0F1; /* Light text */
+    border: 2px solid #2980B9; /* Blue border */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-item img {
+    margin-bottom: 10px;
+    width: 40px;
+  }
+
+  .project-container,
+  .internship-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .project-card,
+  .internship {
+    background-color: #7F8C8D; /* Muted grey background for cards */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-card h3,
+  .internship h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #F39C12; /* Gold headings for projects and internships */
+  }
+
+  .project-card p,
+  .internship p {
+    color: #ECF0F1; /* Light text for descriptions */
+  }
+
+  footer {
+    background-color: #2980B9;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+
+  footer p {
+    font-size: 1rem;
+  }
+
+  .animation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+  }
+
+  .animation-container img {
+    width: 700px;
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 20px;
+    animation: slideUp 2s ease-out;
+  }
+
+  .animation-container h1 {
+    font-size: 3rem;
+    color: #fff;
+    opacity: 0;
+    animation: textAppear 3s forwards;
+    animation-delay: 2s;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes textAppear {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .skills-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .skill-item {
+      width: 100%;
+    }
+  }
+ .contact-item {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    .contact-item a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+</style>
+
+
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Amrutha Varshini</h1>
+      <p>B.Tech IT Student | Java Enthusiast | Full Stack Learner</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#internships">Internships</a></li>
+        <li><a href="#strengths">Strengths</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="animation-container">
+      <img src="C:\Users\amrut\Downloads\portfolio.jpeg" alt="Female Icon" />
+      <h1>Hi, I'm Amrutha Varshini!</h1>
+    </section>
+
+    <section id="about" class="section">
+      <h2><i class="fas fa-user"></i> About Me</h2>
+      <p>I’m Amruthavarshini ,pursuing B.Tech IV year in VVIT. passionate and hardworking with a strong foundation in <strong class="highlight">Java</strong> programming and <strong class="highlight">HTML , CSS</strong>. I have developed practical skills thrugh hands-on projects such as online quiz and sustainable fertilizer optimization for high yields . I am driven by a desire to build efficient ,user-friendly systems and have presented my work at platforms like IUCEEE.with a dedication to continous learning and problem-solving, I aim to contribute to impactful tech solutions that improve everyday life.</p>
+    </section>
+
+    <section id="education" class="section">
+      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+      <div class="education-container">
+        <div class="education-card">
+          <img src="https://img.icons8.com/color/48/graduation-cap.png" alt="BTech" />
+          <p><strong>B.Tech in Information Technology</strong><br>VVIT, Expected 2026, CGPA-9.05</p>
+        </div>
+        <div class="education-card">
+          <img src="https://img.icons8.com/color/48/school.png" alt="Intermediate" />
+          <p><strong>Intermediate</strong><br>Oxford Junior College, 977/1000</p>
+        </div>
+        <div class="education-card">
+          <img src="https://img.icons8.com/color/48/school-building.png" alt="10th" />
+          <p><strong>10th Standard</strong><br>S.T. Mary’s E.M High School, 599/600</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2><i class="fas fa-laptop-code"></i> Skills</h2>
+      <div class="skills-container">
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+          Java
+        </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+          HTML
+        </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+          CSS
+        </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+          MySQL
+        </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+          JavaScript
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+      <div class="project-container">
+        <div class="project-card">
+           <strong class="highlight">Online quiz</strong> 
+<ul>
+  <li><strong>Project Description:</strong> Developed a web-based quiz platform that allows users to take timed quizzes and receive instant results.</li>
+  <li><strong>Frontend:</strong> HTML, CSS</li>
+  <li><strong>Backend:</strong> Java (Servlets, JSP)</li>
+  <li><strong>Database:</strong> MySQL</li>
+  <li><strong>Server:</strong> Apache Tomcat</li>
+  <li><strong>Features:</strong> User login, timer-based quizzes, score calculation, and admin panel for question management</li>
+  <li><strong>GitHub Repository:</strong> <a href="https://github.com/amruthavarshini/online-quiz-system" target="_blank">View Project</a></li>
+</ul> 
+</div>
+  <div class="project-card">
+<h3><span class="highlight">Sustainable Fertilizer Optimization for Higher Yields</span></h3>
+<ul>
+  <li><strong>Project Description:</strong> Developed an optimization system to recommend sustainable fertilizer usage for maximizing crop yields while reducing environmental impact.</li>
+  <li><strong>Technologies:</strong> Java (algorithm & back-end), HTML/CSS (user interface)</li>
+  <li><strong>Algorithm:</strong> Genetic Algorithm to optimize nutrient distribution based on soil and crop data</li>
+  <li><strong>Database:</strong> MySQL for storing historical yield and soil profiles</li>
+  <li><strong>Presentation:</strong> Showcased at VNRVJIET’s IUCEEE chapter, selected through the first two rounds</li>
+  <li><strong>GitHub Repository:</strong>  
+    <a href="https://github.com/amruthavarshini/fertilizer-optimization" target="_blank">
+      View Project
+    </a>
+  </li>
+</ul>
+</div>
+<div class="project-card">
+  <h3><strong class="highlight">Calculator</strong></h3>
+  <ul>
+    <li><strong>Project Description:</strong> A modern, responsive calculator with both on-screen buttons and full keyboard support for basic arithmetic, parentheses, and decimal operations.</li>
+    <li><strong>Technologies:</strong> HTML, CSS (Flexbox & Grid, animations), JavaScript (event handling, <code>eval()</code>).</li>
+    <li><strong>UI/UX Features:</strong>  
+      <ul>
+        <li>Smooth hover & click animations</li>
+        <li>Bounce-in welcome animation</li>
+        <li>Gradient & icon-enhanced navigation bar</li>
+        <li>Dark-theme styling with gold & teal accent colors</li>
+      </ul>
+    </li>
+    <li><strong>Accessibility:</strong> High-contrast design, ARIA labels for screen-readers, semantic HTML.</li>
+    <li><strong>Responsive Design:</strong> Mobile-first layout—buttons and display scale seamlessly from phones to desktops.</li>
+    <li><strong>Error Handling:</strong> Graceful “Error” message on invalid expressions, with backspace & clear support.</li>
+    <li><strong>GitHub Repository:</strong>  
+      <a href="https://github.com/yourusername/calculator-project" target="_blank">
+        View Project
+      </a>
+    </li>
+  </ul>
+</div>
+
+ </div>
+    </section>
+
+   <section id="internships" class="section">
+      <h2><img src="https://img.icons8.com/color/48/internship.png" /> Internships</h2>
+      <div class="internship-container">
+        <div class="internship">
+          <h3>Blue Prism - Cohort 7</h3>
+          <ul>
+            <li><strong>Role:</strong> RPA Intern</li>
+            <li><strong>Timeline:</strong> June 2023 - August 2023</li>
+            <li>Automated tasks using Blue Prism</li>
+            <li>Developed business process scripts</li>
+          </ul>
+        </div>
+        <div class="internship">
+          <h3>Juniper Network Virtual Cloud - Cohort 8</h3>
+          <ul>
+            <li><strong>Role:</strong> Network Virtualization Intern</li>
+            <li><strong>Timeline:</strong> Sept 2023 - Nov 2023</li>
+            <li>Managed virtual network environments</li>
+          </ul>
+        </div>
+        <div class="internship">
+          <h3>Full Stack Development - Cohort 9</h3>
+          <ul>
+            <li><strong>Role:</strong> Full Stack Intern</li>
+            <li><strong>Timeline:</strong> Jan 2024 - Mar 2024</li>
+            <li>Built web apps using Node.js and MongoDB</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+ <section id="contact" class="section">
+      <h2><img src="https://img.icons8.com/color/48/new-post.png" /> Contact</h2>
+      <div class="contact-item"><strong>Email:</strong> <a href="mailto:amruthakavuri11@gmail.com">amruthakavuri11@gmail.com</a></div>
+      <div class="contact-item"><strong>Phone:</strong> +91-6309149174</div>
+      <div class="contact-item"><strong>Address:</strong> Guntur, Andhra Pradesh, India</div>
+      <div class="contact-item"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/amruthavarshini-kavuri-212b4226a"target="_blank">linkedin.com/in/amruthavarshini-kavuri</a></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Amrutha Varshini</p>
+  </footer>
+</body>
+</html>
